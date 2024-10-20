@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="villes">
+        <item>Selectinner une ville</item>
+        <item>Casablanca</item>
+        <item>Rabat</item>
+        <item>Marakech</item>
+        <item>Fès</item>
+        <item>Tanger</item>
+        <item>Agadir</item>
+
+    </string-array>
+</resources>

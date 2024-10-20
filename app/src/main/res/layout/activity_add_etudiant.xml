@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNom"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPrenom"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prénom"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tilNom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPrenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilVille"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ville"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tilPrenom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Spinner
+                android:id="@+id/spinnerVille"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/villes"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Champ pour le sexe -->
+        <TextView
+            android:id="@+id/labelSexe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexe"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tilVille"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupSexe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/labelSexe">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioHomme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Homme"
+                android:layout_marginEnd="16dp"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioFemme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Femme"/>
+        </RadioGroup>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewEtudiant"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:layout_constraintTop_toBottomOf="@id/radioGroupSexe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="Image Etudiant"
+            app:srcCompat="@drawable/selectimage"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonChoisirImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choisir une Image"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/imageViewEtudiant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAnnuler"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Annuler"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/buttonChoisirImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonAjouter"
+            android:backgroundTint="?attr/colorSecondary"
+            android:textColor="@color/white"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAjouter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ajouter Etudiant"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@id/buttonChoisirImage"
+            app:layout_constraintStart_toEndOf="@id/buttonAnnuler"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
